@@ -1,0 +1,9 @@
+{
+	"user": "BrunoBM16",
+	"repo": "samp-tpi",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"dependencies": [
+		"urShadow/Pawn.RakNet"
+	]
+}
