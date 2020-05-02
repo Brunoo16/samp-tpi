@@ -72,7 +72,7 @@ stock bool:IsPlayerInvisible(const playerid)
 {
 	if(!IsPlayerConnected(playerid))
 	{
-		return 0;
+		return false;
 	}
 	else
 	{
