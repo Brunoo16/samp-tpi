@@ -13,9 +13,14 @@ TogglePlayerInvisibility.
 
 static bool:TPI_IsInvisible[MAX_PLAYERS char];
 
-/*Function*/
+/*TogglePlayerInvisibility*/
 stock TogglePlayerInvisibility(const playerid, bool:toggle)
 {
+	if(!IsPlayerConnected(playerid)) 
+	{
+		return 0;
+	}
+	
 	TPI_IsInvisible{playerid} = toggle;
 	
 	if(toggle)
@@ -58,6 +63,20 @@ stock TogglePlayerInvisibility(const playerid, bool:toggle)
 
 		BS_RPC(tpi_bs, -1, 0x20);
 		BS_Delete(tpi_bs);
+	}
+	return 1;
+}
+
+/*IsPlayerInvisible*/
+stock bool:IsPlayerInvisible(const playerid)
+{
+	if(!IsPlayerConnected(playerid))
+	{
+		return 0;
+	}
+	else
+	{
+		return TPI_IsInvisible{playerid};
 	}
 }
 
